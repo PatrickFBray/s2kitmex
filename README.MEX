@@ -1,0 +1,53 @@
+A Matlab interface to S2kit, with assorted plotting routines for
+spherical harmonic decompositions of spherical data.
+
+S2kit may be obtained from
+http://www.cs.dartmouth.edu/~geelong/sphere/
+
+For convenience, I include the latest release of S2kit in this
+archive. I have no affiliation to the authors of S2kit.
+
+BUILING THE MEX FILES AGAIN
+
+In order to build these Mex files one must
+
+1) Install the FFTW3 library and header files.
+   (E.g. On Fedora 10, this requires these RPMs:
+           fftw-devel-3.2.1-1.fc10.i386
+           fftw-3.2.1-1.fc10.x86_64
+           fftw-devel-3.2.1-1.fc10.x86_64
+           fftw-3.2.1-1.fc10.i386)
+2) Unpack s2kit10.tar.gz.
+   (N.B. The instructions assume you now have a subdirectory named "s2kit10".)
+3) Follow the instructions in s2kit10/s2kit_fx.pdf page 4 for building s2kit on your platform.
+   (In brief, edit the Makefile to set the location for the FFTW3 library.
+    If running on a 64-bit system, add the flags "-fPIC -m64" to both CFLAGS and LDFLAGS.
+    Once ready, run make to build the s2kit object files and test programs.)
+4) In THIS directory, start Matlab
+5) At the prompt type
+
+mex -v FST_semi_fly_mex.c -Is2kit10 -Ls2kit10 -lfftw3 s2kit10/pmls.o s2kit10/cospmls.o s2kit10/seminaive.o s2kit10/csecond.o s2kit10/primitive.o s2kit10/makeweights.o s2kit10/naive_synthesis.o s2kit10/FST_semi_fly.o
+
+mex -v InvFST_semi_fly_mex.c -Is2kit10 -Ls2kit10 -lfftw3 s2kit10/pmls.o s2kit10/cospmls.o s2kit10/seminaive.o s2kit10/csecond.o s2kit10/primitive.o s2kit10/makeweights.o s2kit10/naive_synthesis.o s2kit10/FST_semi_fly.o
+
+6) Test your installation by running "Test" and "TestInv".
+
+--
+
+This interface to S2Kit is Copyright Chris Rodgers, 2005-11.
+
+This file is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This file is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this file; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+See the accompanying LICENSE file for details.
