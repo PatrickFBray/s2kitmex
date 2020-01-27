@@ -26,6 +26,7 @@ Configuring the library as shared is essential for it to integrate with MATLAB.
 User on OS X should be sure to have developer tools installed.
 
 ### Installing FFTW on Windows systems
+Instructions for windows provided by [Dr. Peter Muller](https://sites.google.com/site/petermullermath/)
 Please refer to the [installation instructions provided by the developers of 
 FFTW](http://www.fftw.org/install/windows.html).
 
