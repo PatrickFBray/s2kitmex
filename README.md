@@ -1,9 +1,4 @@
 # Electrical Impedance Tomography
-This is a package authored by Peter J. Kostelec and Dan Rockmore of Dartmouth
-University to compute the coefficient of spherical harmonic expansions of
-arbitrary functions. It was originally available on Kostelec's website, but
-his site is no longer available online. This repository is here to keep the 
-package available.
 
 ## Dependancies
 
